@@ -4,6 +4,9 @@ ENV GLOBAL_JAVA_OPTS "-server -Dfile.encoding=UTF-8"
 ENV DEFAULT_JAVA_OPTS "-Xmx1024m -Xms1024m -XX:+UseConcMarkSweepGC"
 ENV APP_DIR '/opt/app'
 
+RUN apt-get update
+RUN apt-get install -y curl vim
+
 RUN mkdir -p $APP_DIR/data && \
     mkdir -p $APP_DIR/tmp && \
     mkdir -p $APP_DIR/bin && \
